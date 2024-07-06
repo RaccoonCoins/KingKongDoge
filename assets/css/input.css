@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    h1, h2, h3, h4, h5, h6, a {
+        font-family: 'Dangrek', sans-serif;
+    }
+
+    .linear-text {
+        background: linear-gradient(to bottom, #8a01d7 56%, #ffffff 44%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .scrollbar-0::-webkit-scrollbar {
+        height: 0;
+    }
+
+}
+.sticky-header {
+    background: #09070E;
+}
+
+@font-face {
+    font-family: 'Dangrek';
+    font-weight: 400;
+    src: url('../fonts/Dangrek-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 300;
+    src: url('../fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 500;
+    src: url('../fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 600;
+    src: url('../fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 700;
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 800;
+    src: url('../fonts/Poppins-Black.ttf');
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8A01D7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000072;
+}
+
+
+.loader {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/fevicon.png');
+    background-repeat: no-repeat;
+}
+
+.loader:after {
+    animation: pulse 1s infinite;
+    transform: perspective(336px) translateZ(0px);
+}
+
+@keyframes pulse {
+    to {
+        transform: perspective(336px) translateZ(168px);
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 991px) {
+    #navbar-right {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    #navbar-right.open {
+        transform: scaleY(1);
+    }
+}
